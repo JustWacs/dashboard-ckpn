@@ -1,10 +1,11 @@
-import { Menu } from "antd";
+import { ConfigProvider, Menu } from "antd";
 import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div className="flex flex-col w-[15%]">
       <h1 className="text-xl font-bold text-center bg-light-brown py-3">Sistem Informasi CKPN Digital</h1>
+      <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
       <Menu className="h-screen"
         items={[
           {
@@ -37,6 +38,7 @@ const Navbar = () => {
           },
         ]}
       />
+      </ConfigProvider>
     </div>
   );
 };

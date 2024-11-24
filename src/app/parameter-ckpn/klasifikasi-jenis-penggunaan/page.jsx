@@ -1,62 +1,98 @@
+"use client";
 import HeaderContent from "@/Components/utilities/HeaderContent";
 import HeaderPage from "@/Components/utilities/HeaderPage";
 import MenuContent from "@/Components/utilities/MenuContent";
-import { Button, ConfigProvider, Table } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import { Button, ConfigProvider, Input, Table } from "antd";
+import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
+import Link from "next/link";
+import CustomButton from "@/Components/utilities/CustomButton";
+
+const items = [
+  {
+    key: "1",
+    label: "1st item",
+  },
+  {
+    key: "2",
+    label: "2nd item",
+  },
+  {
+    key: "3",
+    label: "3rd item",
+  },
+];
 
 const dataSource = [
-    {
-      key: '1',
-      name: 'Mike',
-      age: 32,
-      address: '10 Downing Street',
-    },
-    {
-      key: '2',
-      name: 'John',
-      age: 42,
-      address: '10 Downing Street',
-    },
-  ];
+  {
+    key: "1",
+    "Jenis Produk CBS": "10 - Modal Kerja",
+    "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN": "10 - Modal Kerja",
+    "Keterangan": "Modal Kerja",
+  },
+  {
+    key: "2",
+    "Jenis Produk CBS": "20 - Investasi",
+    "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN": "20 - Investasi",
+    "Keterangan": "Investasi",
+  },
+];
 
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-    },
-  ];
+const columns = [
+  {
+    title: "Jenis Produk CBS",
+    dataIndex: "Jenis Produk CBS",
+    key: "Jenis Produk CBS",
+  },
+  {
+    title: "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN",
+    dataIndex: "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN",
+    key: "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN",
+  },
+  {
+    title: "Keterangan",
+    dataIndex: "Keterangan",
+    key: "Keterangan",
+  },
+  {
+    title: "Aksi",
+    key: "Aksi",
+    render: () => (
+      <div className="flex gap-2">
+        <EditOutlined style={{ color: "blue", cursor: "pointer" }} />
+        <DeleteOutlined style={{ color: "red", cursor: "pointer" }} onClick={() => handleDelete(record.key)} />
+      </div>
+    ),
+  },
+];
 const Page = () => {
   return (
     <>
       <div className="flex flex-col w-full bg-white-accent">
         <HeaderPage title="Parameter CKPN" />
         <div className="m-5 h-screen bg-white">
-          <HeaderContent title="Parameter CKPN | Kolektif & Individual" />
-          <div className="p-5 flex">
+          <HeaderContent title="Parameter CKPN | Klasifikasi Jenis Penggunaan" />
+          <div className="p-5 flex w-full mx-5">
             <MenuContent title="Parameter CKPN" subTitle="Kolektif & Individual" href="/parameter-ckpn" />
             <MenuContent title="Klasifikasi" subTitle="Jenis Produk" href="/parameter-ckpn/klasifikasi-jenis-produk" />
             <MenuContent title="Klasifikasi" subTitle="Jenis Penggunaan" href="/parameter-ckpn/klasifikasi-jenis-penggunaan" />
             <MenuContent title="Klasifikasi" subTitle="Sektor Ekonomi" href="/parameter-ckpn/klasifikasi-sektor-ekonomi" />
           </div>
           <div className="flex justify-end p-5">
-            <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
-              <Button type="primary" shape="round" size="large" icon={<PlusOutlined />}>
-                Tambah
-              </Button>
-            </ConfigProvider>
+            <CustomButton href="/parameter-ckpn/add-data" type="primary" shape="round" iconButton={<PlusOutlined />} text="Tambah" />
           </div>
-         
+          <div className="px-5 pb-5">
+            <h2>Pencarian</h2>
+            <div className="flex gap-2">
+            <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
+              <Input className="w-24" type="text" placeholder="Cari . . ." />
+            </ConfigProvider>
+            <CustomButton href="" type="primary" text="Cari" />
+            <CustomButton href="" type="default" text="Reset" />
+            </div>
+          </div>
+          <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
+            <Table className="text-sm" dataSource={dataSource} columns={columns} />
+          </ConfigProvider>
         </div>
       </div>
     </>

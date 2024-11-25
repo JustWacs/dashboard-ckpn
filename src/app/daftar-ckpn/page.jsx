@@ -6,6 +6,7 @@ import { Button, ConfigProvider, Input, Table } from "antd";
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import CustomButton from "@/Components/utilities/CustomButton";
+import Popup from "@/Components/utilities/PopupButton";
 
 const items = [
   {
@@ -25,15 +26,15 @@ const items = [
 const dataSource = [
   {
     key: "1",
-    "Jenis Produk CBS": "10 - Modal Kerja",
-    "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN": "10 - Modal Kerja",
-    "Keterangan": "Modal Kerja",
+    "Jenis Produk CBS": "301 - Kredit Modal Kerja",
+    "Mapping Kelompok Klasifikasi Jenis Produk CKPN": "301 - Kredit Modal Kerja",
+    "Keterangan": "Kredit Modal Kerja",
   },
   {
     key: "2",
-    "Jenis Produk CBS": "20 - Investasi",
-    "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN": "20 - Investasi",
-    "Keterangan": "Investasi",
+    "Jenis Produk CBS": "302 - Kredit Investasi",
+    "Mapping Kelompok Klasifikasi Jenis Produk CKPN": "302 - Kredit Investasi",
+    "Keterangan": "Kredit Investasi",
   },
 ];
 
@@ -44,9 +45,9 @@ const columns = [
     key: "Jenis Produk CBS",
   },
   {
-    title: "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN",
-    dataIndex: "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN",
-    key: "Mapping Kelompok Klasifikasi Jenis Penggunaan CKPN",
+    title: "Mapping Kelompok Klasifikasi Jenis Produk CKPN",
+    dataIndex: "Mapping Kelompok Klasifikasi Jenis Produk CKPN",
+    key: "Mapping Kelompok Klasifikasi Jenis Produk CKPN",
   },
   {
     title: "Keterangan",
@@ -59,7 +60,7 @@ const columns = [
     render: () => (
       <div className="flex gap-2">
         <EditOutlined style={{ color: "blue", cursor: "pointer" }} />
-        <DeleteOutlined style={{ color: "red", cursor: "pointer" }} />
+        <DeleteOutlined style={{ color: "red", cursor: "pointer" }} onClick={() => handleDelete(record.key)} />
       </div>
     ),
   },
@@ -68,17 +69,11 @@ const Page = () => {
   return (
     <>
       <div className="flex flex-col w-full bg-white-accent">
-        <HeaderPage title="Parameter CKPN" />
+        <HeaderPage title="Daftar CKPN" />
         <div className="m-5 h-screen bg-white">
-          <HeaderContent title="Parameter CKPN | Klasifikasi Jenis Penggunaan" />
-          <div className="p-5 flex w-full mx-5">
-            <MenuContent title="Parameter CKPN" subTitle="Kolektif & Individual" href="/parameter-ckpn" />
-            <MenuContent title="Klasifikasi" subTitle="Jenis Produk" href="/parameter-ckpn/klasifikasi-jenis-produk" />
-            <MenuContent title="Klasifikasi" subTitle="Jenis Penggunaan" href="/parameter-ckpn/klasifikasi-jenis-penggunaan" />
-            <MenuContent title="Klasifikasi" subTitle="Sektor Ekonomi" href="/parameter-ckpn/klasifikasi-sektor-ekonomi" />
-          </div>
+          <HeaderContent title="Daftar CKPN" />
           <div className="flex justify-end p-5">
-            <CustomButton href="/parameter-ckpn/add-data" type="primary" shape="round" iconButton={<PlusOutlined />} text="Tambah" />
+            <Popup/>
           </div>
           <div className="px-5 pb-5">
             <h2>Pencarian</h2>

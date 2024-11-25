@@ -59,7 +59,7 @@ const columns = [
     render: () => (
       <div className="flex gap-2">
         <EditOutlined style={{ color: "blue", cursor: "pointer" }} />
-        <DeleteOutlined style={{ color: "red", cursor: "pointer" }} onClick={() => handleDelete(record.key)} />
+        <DeleteOutlined style={{ color: "red", cursor: "pointer" }} />
       </div>
     ),
   },

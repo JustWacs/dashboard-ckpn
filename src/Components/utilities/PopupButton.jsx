@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, ConfigProvider, DatePicker, Flex, Input, Modal, Space } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import TextArea from "antd/es/input/TextArea";
+import CustomButton from "./CustomButton";
 
 const PopupButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,14 +21,27 @@ const PopupButton = () => {
         <Button size="large" type="primary" shape="round" icon={<PlusOutlined />} onClick={showModal}>
           Tambah
         </Button>
-        <Modal title="Buat CKPN Baru" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-          <br/>
-          <Space className="w-full" direction="vertical" size="large"  >
+        <Modal
+          title="Buat CKPN Baru"
+          open={isModalOpen}
+          footer={[
+            <>
+              <Button key="submit" onClick={handleCancel}>
+                Batal
+              </Button>
+              <Button type="primary" key="back" onClick={handleOk}>
+                Proses
+              </Button>
+            </>,
+          ]}
+        >
+          <br />
+          <Space className="w-full" direction="vertical" size="large">
             {/* Section 1 */}
             <Space className="w-full" direction="vertical" size="small">
               <Flex>
                 <p className="w-1/2">Periode : </p>
-                <DatePicker className="w-1/2"/>
+                <DatePicker className="w-1/2" />
               </Flex>
               <Flex>
                 <p className="w-1/2">Klasifikasi Pinjaman PD : </p>
@@ -74,15 +88,14 @@ const PopupButton = () => {
               </Flex>
               <Flex>
                 <p className="w-1/2">PPKA : </p>
-                <Input placeholder="Rp" className="w-1/2"/>
+                <Input placeholder="Rp" className="w-1/2" />
               </Flex>
               <Flex>
                 <p className="w-1/2">Catatan : </p>
-                <TextArea className="w-1/2"/>
+                <TextArea className="w-1/2" />
               </Flex>
             </Space>
             {/* End Section */}
-            
           </Space>
         </Modal>
       </ConfigProvider>

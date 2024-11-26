@@ -2,7 +2,7 @@
 import HeaderContent from "@/Components/utilities/HeaderContent";
 import HeaderPage from "@/Components/utilities/HeaderPage";
 import MenuContent from "@/Components/utilities/MenuContent";
-import { Button, ConfigProvider, Input, Table } from "antd";
+import { Button, ConfigProvider, DatePicker, Input, Table } from "antd";
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import CustomButton from "@/Components/utilities/CustomButton";
@@ -69,9 +69,9 @@ const Page = () => {
   return (
     <>
       <div className="flex flex-col w-full bg-white-accent">
-        <HeaderPage title="Daftar CKPN" />
+        <HeaderPage title="Perhitungan CKPN" />
         <div className="m-5 h-screen bg-white">
-          <HeaderContent title="Daftar CKPN" />
+          <HeaderContent title="Perhitungan CKPN | Unggah Data Pinjaman" />
           <div className="flex justify-end p-5">
             <Popup/>
           </div>
@@ -79,15 +79,12 @@ const Page = () => {
             <h2>Pencarian</h2>
             <div className="flex gap-2">
             <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
-              <Input className="w-24" type="text" placeholder="Cari . . ." />
+              <DatePicker className="w-24" type="text"/>
             </ConfigProvider>
             <CustomButton href="" type="primary" text="Cari" />
             <CustomButton href="" type="default" text="Reset" />
             </div>
           </div>
-          <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
-            <Table className="text-sm" dataSource={dataSource} columns={columns} />
-          </ConfigProvider>
         </div>
       </div>
     </>

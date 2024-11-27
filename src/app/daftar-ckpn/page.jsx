@@ -2,11 +2,13 @@
 import HeaderContent from "@/Components/utilities/HeaderContent";
 import HeaderPage from "@/Components/utilities/HeaderPage";
 import MenuContent from "@/Components/utilities/MenuContent";
-import { Button, ConfigProvider, Input, Table } from "antd";
+import { Button, ConfigProvider, DatePicker, Flex, Input, Space, Table } from "antd";
 import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import CustomButton from "@/Components/utilities/CustomButton";
 import Popup from "@/Components/utilities/PopupButton";
+import TextArea from "antd/es/input/TextArea";
+import PopupButton from "@/Components/utilities/PopupButton";
 
 const items = [
   {
@@ -66,6 +68,71 @@ const columns = [
   },
 ];
 const Page = () => {
+  const modalContent = (
+    <Space className="w-full" direction="vertical" size="large">
+            {/* Section 1 */}
+            <Space className="w-full" direction="vertical" size="small">
+              <Flex>
+                <p className="w-1/2">Periode : </p>
+                <DatePicker className="w-1/2" />
+              </Flex>
+              <Flex>
+                <p className="w-1/2">Klasifikasi Pinjaman PD : </p>
+                <p className="w-1/2">1 - Jenis Produk</p>
+              </Flex>
+              <Flex>
+                <p className="w-1/2">Metode Perhitungan PD : </p>
+                <p className="w-1/2">2 - Migration</p>
+              </Flex>
+              <Flex>
+                <p className="w-1/2">Rentang Waktu PD (Bulan) : </p>
+                <p className="w-1/2">12</p>
+              </Flex>
+              <Flex>
+                <p className="w-1/2">Interval Rata-Rata PD : </p>
+                <p className="w-1/2">2 - Triwulanan</p>
+              </Flex>
+            </Space>
+
+            {/* Section 2 */}
+            <Space className="w-full" direction="vertical" size="small">
+              <Flex>
+                <p className="w-1/2">Metode Perhitungan LGD : </p>
+                <p className="w-1/2">2 - Collateral Shortfall</p>
+              </Flex>
+              <Flex>
+                <p className="w-1/2">Rentang Waktu LGD (Tahun) : </p>
+                <p className="w-1/2">5</p>
+              </Flex>
+            </Space>
+
+            {/* Section 3 */}
+            <Space className="w-full" direction="vertical" size="small">
+              <Flex>
+                <p className="w-1/2">Batasan Nominal Baki Debet</p>
+              </Flex>
+              <Flex>
+                <p className="w-1/2">(One Obligor) mulai CKPN Individual : </p>
+                <p className="w-1/2">Rp 1.000.000.000,00</p>
+              </Flex>
+              <Flex>
+                <p className="w-1/2">Kolektibilitas mulai CKPN Individual :</p>
+                <p className="w-1/2">5 - Macet</p>
+              </Flex>
+              <Flex>
+                <p className="w-1/2">PPKA : </p>
+                <Input placeholder="Rp" className="w-1/2" />
+              </Flex>
+              <Flex>
+                <p className="w-1/2">Catatan : </p>
+                <TextArea className="w-1/2" />
+              </Flex>
+            </Space>
+            {/* End Section */}
+          </Space>
+  );
+
+
   return (
     <>
       <div className="flex flex-col w-full bg-white-accent">
@@ -73,7 +140,13 @@ const Page = () => {
         <div className="m-5 h-screen bg-white">
           <HeaderContent title="Daftar CKPN" />
           <div className="flex justify-end p-5">
-            <Popup/>
+          <PopupButton
+            buttonText="Tambah Data"
+            modalTitle="Tambah Data Baru"
+            modalContent={modalContent}
+            onOk={() => console.log("OK clicked")}
+            onCancel={() => console.log("Cancel clicked")}
+         />
           </div>
           <div className="px-5 pb-5">
             <h2>Pencarian</h2>

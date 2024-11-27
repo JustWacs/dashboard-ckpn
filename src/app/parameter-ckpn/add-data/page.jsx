@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <div className="flex flex-col w-full bg-white-accent">
       <HeaderPage title="Parameter CKPN" />
-      <div className="m-5 h-screen bg-white">
+      <div className="m-5 h-auto bg-white">
         <HeaderContent title="Parameter CKPN | Kolektif & Individual" />
         <div className="py-10 px-5">
           <Form>
@@ -131,7 +131,7 @@ const Page = () => {
             <RadioButton />
           </Form>
         </div>
-        <div className="flex justify-end gap-4 px-5">
+        <div className="flex justify-end gap-4 p-5 border-t">
           <CustomButton href="/parameter-ckpn" iconButton={<ArrowLeftOutlined />} text="Kembali" shape="rounded" />
           <CustomButton href="/parameter-ckpn" iconButton={<SaveOutlined />} text="Simpan" shape="rounded" type="primary" />
         </div>

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.table-container {
+    max-width: 100%; /* Restrict to the page width */
+    overflow-x: auto; /* Allow internal scrolling */
+    white-space: nowrap; /* Prevent content from wrapping */
+  }

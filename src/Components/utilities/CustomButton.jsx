@@ -9,7 +9,7 @@ const CustomButton = ({ href, iconButton, text, shape, type}) => {
           <Button
             type= {type || null}
             shape={shape}
-            size="large"
+            size={null || "large"}
             icon={iconButton || null}>
             {text}
           </Button>

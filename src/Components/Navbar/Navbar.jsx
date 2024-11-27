@@ -20,12 +20,9 @@ const items = [
   },
   {
     label: "Perhitungan CKPN",
+    key: "perhitungan-ckpn",
     icon: <PieChartOutlined />,
     children: [
-      {
-        key: "perhitungan-ckpn",
-        label: <Link href="/perhitungan-ckpn">Perhitungan CKPN</Link>,
-      },
       {
         key: "unggah-data-pinjaman",
         label: <Link href="/perhitungan-ckpn/unggah-data-pinjaman">Unggah Data Pinjaman</Link>,
@@ -40,7 +37,7 @@ const items = [
       },
       {
         key: "perhitungan-cpkn-individual",
-        label: <Link href="/perhitungan-ckpn/perhitungan-cpkn-individual">Perhitungan CKPN Individual</Link>,
+        label: <Link href="/perhitungan-ckpn/perhitungan-ckpn-individual">Perhitungan CKPN Individual</Link>,
       },
       {
         key: "perhitungan-total-ckpn",

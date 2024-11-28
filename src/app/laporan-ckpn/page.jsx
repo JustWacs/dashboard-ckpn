@@ -1,9 +1,8 @@
 "use client";
 import HeaderContent from "@/Components/utilities/HeaderContent";
 import HeaderPage from "@/Components/utilities/HeaderPage";
-import MenuContent from "@/Components/utilities/MenuContent";
-import { Button, ConfigProvider, DatePicker, Input, Select, Table } from "antd";
-import { DeleteOutlined, EditOutlined, PlusOutlined } from "@ant-design/icons";
+import { ConfigProvider, DatePicker, Select } from "antd";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import CustomButton from "@/Components/utilities/CustomButton";
 
 const dataSource = [
@@ -82,6 +81,7 @@ const Page = () => {
                     { value: "1", label: "Laporan Kertas Kerja Perhitungan CKPN" },
                     { value: "2", label: "Laporan Ringkasan Perhitungan CKPN" },
                   ]}
+                  size="large"
                 />
                 <DatePicker className="w-36"/>
               </ConfigProvider>

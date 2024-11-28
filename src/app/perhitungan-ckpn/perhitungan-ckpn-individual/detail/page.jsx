@@ -1,10 +1,9 @@
 "use client";
 import HeaderContent from "@/Components/utilities/HeaderContent";
 import HeaderPage from "@/Components/utilities/HeaderPage";
-import { Button, ConfigProvider, DatePicker, Input, Table, Upload } from "antd";
+import { ConfigProvider, DatePicker, Input, Table, Upload } from "antd";
 import CustomButton from "@/Components/utilities/CustomButton";
-import { ArrowLeftOutlined, DeleteOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
-import Link from "next/link";
+import { ArrowLeftOutlined, SaveOutlined } from "@ant-design/icons";
 import TextArea from "antd/es/input/TextArea";
 
 const Page = () => {
@@ -119,13 +118,13 @@ const Page = () => {
     <>
       <div className="flex flex-col w-full bg-white-accent">
         <HeaderPage title="Perhitungan CKPN" />
-        <div className="m-5 h-auto bg-white pb-5">
+        <div className="m-5 h-auto bg-white ">
           <HeaderContent title="Perhitungan CKPN | Perhitungan CKPN Individual" />
           <div className="py-10 px-5">
             <div className="flex gap-2 items-center">
               <h2>Periode</h2>
               <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
-                <DatePicker className="w-64" />
+                <DatePicker className="w-64" size="large"/>
               </ConfigProvider>
               <CustomButton href="" type="default" text="Cari" size="normal" />
               <CustomButton href="" type="default" text="Reset" />

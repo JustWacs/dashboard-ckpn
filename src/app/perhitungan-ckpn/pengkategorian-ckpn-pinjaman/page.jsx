@@ -158,9 +158,9 @@ const Page = () => {
             <div className="flex gap-2 items-center">
               <h2>Periode</h2>
               <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
-                <DatePicker className="w-64" />
+                <DatePicker className="w-64" size="large" />
               </ConfigProvider>
-              <CustomButton href="" type="primary" text="Cari" size="small" />
+              <CustomButton href="" type="primary" text="Proses" size="small" />
               <CustomButton href="" type="default" text="Reset" />
             </div>
           </div>
@@ -193,7 +193,6 @@ const Page = () => {
                   scroll={{
                     x: "max-content",
                   }}
-                  pagination={false}
                 />
               </ConfigProvider>
             </div>

@@ -40,7 +40,7 @@ const Page = () => {
               <CustomButton href="" type="primary" text="Proses" />
             </div>
           </div>
-          <div className="flex px-5 pb-5">
+          <div className="px-5 flex mx-5 pt-10 border-b">
             <MenuContent title="Unggah" subTitle="Data Nominatif Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-nominatif-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Hapus Buku Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-hapus-buku-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Realisasi Eksekusi Agunan" href="/perhitungan-ckpn/" />

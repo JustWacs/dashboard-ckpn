@@ -119,18 +119,18 @@ const ViewPage = () => {
               </ConfigProvider>
             </div>
           </div>
-          <div className="flex px-5 pb-5">
+          <div className="px-5 flex mx-5 pt-10 border-b">
             <MenuContent title="Unggah" subTitle="Data Nominatif Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-nominatif-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Hapus Buku Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-hapus-buku-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Realisasi Eksekusi Agunan" href="/perhitungan-ckpn/unggah-data-pinjaman/data-realisasi-eksekusi-agunan" />
           </div>
           <div className="flex flex-col gap-4 p-7">
             <div className="flex items-center gap-4">
-              <h2>Nama File : </h2>
+              <h2 className="w-[15%]">Nama File : </h2>
               <h2 className="text-orange bg-slate-100 p-2 rounded border border-slate-200">{title}</h2>
             </div>
             <div className="flex items-center gap-4">
-              <h2>Tanggal Unggah : </h2>
+              <h2 className="w-[15%]">Tanggal Unggah : </h2>
               <h2 className="text-orange bg-slate-100 p-2 rounded border border-slate-200">{tanggal}</h2>
             </div>
           </div>
@@ -161,7 +161,7 @@ const ViewPage = () => {
             </div>
           </div>
           <div className="flex justify-end gap-4 p-5 border-t">
-            <CustomButton href="/perhitungan-ckpn/unggah-data-pinjaman/data-nominatif-pinjaman" iconButton={<ArrowLeftOutlined />} text="Kembali" shape="rounded" />
+            <CustomButton href="/perhitungan-ckpn/unggah-data-pinjaman/data-realisasi-eksekusi-agunan" iconButton={<ArrowLeftOutlined />} text="Kembali" shape="rounded" />
           </div>
         </div>
       </div>

@@ -167,11 +167,11 @@ const Page = () => {
             <div className="flex gap-2 items-center">
               <h2>Periode</h2>
               <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
-                <DatePicker className="w-64" />
+                <DatePicker className="w-64" size="large" />
               </ConfigProvider>
             </div>
           </div>
-          <div className="p-5 flex w-full mx-5">
+          <div className="px-5 flex mx-5 mb-10 pt-5 border-b">
             <MenuContent subTitle="Probability of Default (PD)" href="/perhitungan-ckpn/perhitungan-ckpn-kolektif/pd" />
             <MenuContent subTitle="Loss Given Default (LGD)" href="/perhitungan-ckpn/perhitungan-ckpn-kolektif/lgd" />
             <MenuContent subTitle="CKPN Kolektif" href="/perhitungan-ckpn/perhitungan-ckpn-kolektif/ckpn-kolektif" />
@@ -204,6 +204,7 @@ const Page = () => {
         bordered
         scroll={{ x: 1500 }}
       />
+      <h1 className="flex justify-end font-bold p-10">LGD = 30,10%</h1>
           </div>
         </div>
       </div>

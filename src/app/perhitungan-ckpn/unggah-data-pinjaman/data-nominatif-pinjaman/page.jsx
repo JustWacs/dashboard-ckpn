@@ -126,12 +126,12 @@ const Page = () => {
               <CustomButton href="" type="primary" text="Proses" />
             </div>
           </div>
-          <div className="flex px-5 pb-5">
+          <div className="px-5 flex mx-5 pt-10 border-b">
             <MenuContent title="Unggah" subTitle="Data Nominatif Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-nominatif-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Hapus Buku Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-hapus-buku-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Realisasi Eksekusi Agunan" href="/perhitungan-ckpn/unggah-data-pinjaman/data-realisasi-eksekusi-agunan" />
           </div>
-          <div className="flex justify-between p-5 m-5 border">
+          <div className="flex justify-between p-5 mx-5 my-10 border">
             <ConfigProvider theme={{ token: { colorPrimary: "#C65911" } }}>
               <Upload {...props}>
                 <div className="flex items-center border border-gray-400 hover:border-orange rounded">

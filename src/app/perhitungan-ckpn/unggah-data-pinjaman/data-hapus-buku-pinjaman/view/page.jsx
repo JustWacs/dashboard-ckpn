@@ -30,68 +30,68 @@ const columns = [
     dataIndex: "No",
     key: "No",
     fixed: "left",
-    width: 100, // Reduced width
+    width: 100, 
   },
   {
     title: "Posisi Tanggal",
     dataIndex: "Posisi Tanggal",
     key: "Posisi Tanggal",
     fixed: "left",
-    width: 120, // Reduced width
+    width: 120, 
   },
   {
     title: "Kategori",
     dataIndex: "Kategori",
     key: "Kategori",
-    width: 100, // Reduced width
+    width: 100, 
   },
   {
     title: "Kode Kantor",
     dataIndex: "Kode Kantor",
     key: "Kode Kantor",
-    width: 120, // Reduced width
+    width: 120, 
   },
   {
     title: "Nomor Rekening",
     dataIndex: "Nomor Rekening",
     key: "Nomor Rekening",
-    width: 150, // Reduced width
+    width: 150, 
   },
   {
     title: "Nama Nasabah",
     dataIndex: "Nama Nasabah",
     key: "Nama Nasabah",
-    width: 200, // Reduced width
+    width: 200, 
   },
   {
     title: "Klasifikasi",
     dataIndex: "Klasifikasi",
     key: "Klasifikasi",
-    width: 200, // Reduced width
+    width: 200, 
   },
   {
     title: "Tanggal Hapus Buku",
     dataIndex: "Tanggal Hapus Buku",
     key: "Tanggal Hapus Buku",
-    width: 100, // Reduced width
+    width: 100, 
   },
   {
     title: "Suku Bunga",
     dataIndex: "Suku Bunga",
     key: "Suku Bunga",
-    width: 100, // Reduced width
+    width: 100, 
   },
   {
     title: "Plafon",
     dataIndex: "Plafon",
     key: "Plafon",
-    width: 200, // Reduced width
+    width: 200, 
   },
   {
     title: "Baki Debet Hapus Buku (Belum Lunas)",
     dataIndex: "Baki Debet Hapus Buku (Belum Lunas)",
     key: "Baki Debet Hapus Buku (Belum Lunas)",
-    width: 200, // Reduced width
+    width: 200, 
   },
   {
     title: "Aksi",
@@ -103,7 +103,7 @@ const columns = [
       </div>
     ),
     fixed: "right",
-    width: 100, // Reduced width
+    width: 100, 
   },
 ];
 
@@ -126,18 +126,18 @@ const ViewPage = () => {
               </ConfigProvider>
             </div>
           </div>
-          <div className="flex px-5 pb-5">
+          <div className="px-5 flex mx-5 pt-10 border-b">
             <MenuContent title="Unggah" subTitle="Data Nominatif Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-nominatif-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Hapus Buku Pinjaman" href="/perhitungan-ckpn/unggah-data-pinjaman/data-hapus-buku-pinjaman" />
             <MenuContent title="Unggah" subTitle="Data Realisasi Eksekusi Agunan" href="/perhitungan-ckpn/unggah-data-pinjaman/data-realisasi-eksekusi-agunan" />
           </div>
           <div className="flex flex-col gap-4 p-7">
             <div className="flex items-center gap-4">
-              <h2>Nama File : </h2>
+              <h2 className="w-[15%]">Nama File : </h2>
               <h2 className="text-orange bg-slate-100 p-2 rounded border border-slate-200">{title}</h2>
             </div>
             <div className="flex items-center gap-4">
-              <h2>Tanggal Unggah : </h2>
+              <h2 className="w-[15%]">Tanggal Unggah : </h2>
               <h2 className="text-orange bg-slate-100 p-2 rounded border border-slate-200">{tanggal}</h2>
             </div>
           </div>
@@ -148,7 +148,7 @@ const ViewPage = () => {
                   columns={columns}
                   dataSource={dataSource}
                   scroll={{
-                    x: "max-content", // Allow table content to scroll horizontally
+                    x: "max-content", 
                   }}
                   pagination={false}
                 />
